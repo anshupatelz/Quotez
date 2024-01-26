@@ -1,0 +1,18 @@
+/* Global Classes - Start */
+.hidden {
+    visibility: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+.border {
+    border: 1.5px solid var(--border-color);
+}
+
+.bg {
+    background: var(--primary-color);
+}
+
+/* Global Classes - End */

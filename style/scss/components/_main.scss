@@ -1,0 +1,171 @@
+/* Main Styles - Start */
+main {
+    /* background-color: #d26969; */
+    grid-column: span 12;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 10px;
+    width: 100%;
+    margin: auto;
+    height: 60vh;
+    z-index: 1;
+    place-items: center;
+    /* background-color: #2c2c2c; */
+}
+
+/* ----- Content Section Styles - Start */
+.content-section {
+    position: relative;
+    width: 100%;
+    min-width: 250px;
+    max-width: 500px;
+    height: 500px;
+    grid-column: span 12;
+    padding: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    resize: horizontal;
+    /* resize: both; */
+    overflow: hidden;
+}
+
+.content {
+    background: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    border-radius: 25px;
+}
+
+#topicsBox {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.topic {
+    background: var(--secondary-color);
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.content #qoute {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.content #author::before {
+    content: "- ";
+
+}
+
+/* ----- Content Section Styles - End */
+
+/* ----- Controls Section Styles - Start */
+.controls-section {
+    position: absolute;
+    bottom: 60px;
+    margin: auto;
+    padding: 5px;
+    border-radius: 15px;
+    height: fit-content;
+    min-height: 70px;
+    width: 100%;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;
+    background-color: red;
+}
+
+@media screen and (max-width: 480px) {
+    .controls-section {
+        background-color: transparent;
+        grid-gap: 10px;
+    }
+}
+
+.customization {
+    grid-column: span 7;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+@media screen and (max-width: 480px) {
+    .customization {
+        grid-column: span 12;
+    }
+}
+
+.customization>button {
+    width: 100%;
+    height: 100%;
+}
+
+#secondaryNav {
+    grid-column: span 12;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.options {
+    position: absolute;
+    transform: translateY(-100%);
+    width: fit-content;
+    max-width: 193px;
+    height: fit-content;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.options div {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+}
+
+.export-section {
+    grid-column: span 5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+@media screen and (max-width: 480px) {
+    .export-section {
+        grid-column: span 12;
+    }
+}
+
+.export-section>button {
+    width: 100%;
+    height: 100%;
+}
+
+/* ----- Controls Section Styles - End */
+
+/* Main Styles - End */

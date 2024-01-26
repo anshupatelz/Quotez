@@ -1,0 +1,7 @@
+.bg-container {
+    background: var(--bg-image);
+    filter: contrast(100%);
+    background-position: 50%;
+    background-size: 100px;
+    min-height: 100vh;
+}

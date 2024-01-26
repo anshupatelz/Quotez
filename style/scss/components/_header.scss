@@ -1,0 +1,47 @@
+/* Header Styles - Start */
+header {
+    grid-column: span 12;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: fit-content;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+header>div {
+    font-size: calc(var(--font-size)*1.5);
+}
+
+#logo img {
+    height: 60px;
+}
+
+.navBtn {
+    min-width: 40px;
+    min-height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+.navBtn:hover {
+    cursor: pointer;
+    background: var(--secondary-color);
+}
+
+#nav-opt {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.checkbox {
+    display: none;
+}
+
+
+/* Header Styles - End */

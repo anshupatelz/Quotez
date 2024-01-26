@@ -1,0 +1,12 @@
+/* Containers - Start */
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    padding: 20px 20px;
+}
+
+/* Container - Start */

@@ -1,0 +1,27 @@
+/* Filters Styles - Start */
+#toggleFiltersOnMobile {
+    display: none;
+}
+
+.selectFilters {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-size: calc(var(--font-size)*1);
+    border: 1.5px solid var(--border-color);
+    border-radius: 25px;
+    /* width: 200px; */
+    /* text-align: center; */
+    padding: 5px 10px;
+}
+
+@media screen and (max-width: 720px) {
+    #filters {
+        display: none;
+    }
+
+    #toggleFiltersOnMobile {
+        display: block;
+    }
+}
+
+/* Filters Styles - End */
