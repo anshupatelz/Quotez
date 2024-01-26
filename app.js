@@ -119,12 +119,19 @@ colorsBtn.addEventListener("mouseout", () => {
     optionsBoxVisibility(false, colorsOptionsBox);
 });
 
-const allColors = ["red", "green", "yellow", "purple", "orange", "blue"];
+const allColors = [
+    "linear-gradient(150deg, rgb(0, 176, 158), rgb(19, 77, 93), rgb(16, 23, 31))",
+    "linear-gradient(90deg, hsla(29, 92%, 70%, 1) 0%, hsla(0, 87%, 73%, 1) 100%)",
+    "linear-gradient(90deg, hsla(330, 36%, 53%, 1) 0%, hsla(289, 68%, 19%, 1) 100%)",
+    "linear-gradient(90deg, hsla(192, 95%, 50%, 1) 0%, hsla(225, 89%, 47%, 1) 100%)",
+    "linear-gradient(90deg, hsla(139, 70%, 75%, 1) 0%, hsla(63, 90%, 76%, 1) 100%)",
+    "linear-gradient(90deg, hsla(286, 48%, 91%, 1) 0%, hsla(340, 73%, 75%, 1) 50%, hsla(263, 58%, 45%, 1) 100%)"
+];
 const colorOpt = document.querySelectorAll("#colors-btn .options div");
 colorOpt.forEach((element, index) => {
-    element.style.backgroundColor = allColors[index];
+    element.style.backgroundImage = allColors[index];
     element.addEventListener("click", () => {
-        contentSection.style.backgroundColor = allColors[index];
+        contentSection.style.backgroundImage = allColors[index];
     });
 });
 

@@ -21,31 +21,37 @@
         <div class="bg-container">
             <div class="container">
                 <header>
-                    <div id="logo"><img src="/src/quotez_logo.png" alt=""></div>
-                    <button id="toggleFiltersOnMobile">Filters</button>
-                    <div id="filters">
-                        <select name="lang" id="lang" class="selectFilters">
-                            <option value="">Languange</option>
-                            <option value="en">English</option>
-                            <option value="hi">Hindi</option>
-                        </select>
-                        <select name="emotion" id="" class="selectFilters">
-                            <option value="">Emotion</option>
-                            <option value="success">Success</option>
-                            <option value="failure">Sailure</option>
-                        </select>
-                        <select name="author" id="" class="selectFilters">
-                            <option value="">Author</option>
-                            <option value="">Abdul Kalam</option>
-                            <option value="">Anonymous</option>
-                        </select>
-                        <select name="length" id="" class="selectFilters">
-                            <option value="">Length</option>
-                            <option value="">Short</option>
-                            <option value="">Medium</option>
-                            <option value="">Long</option>
-                        </select>
+                    <div>
+                        <div id="logo"><img src="/src/quotez_logo.png" alt=""></div>
+                        <button id="toggleFiltersOnMobile">
+                            <i class="fa-solid fa-filter"></i>
+                            <span>Filters</span>
+                        </button>
+                        <div id="filters">
+                            <select name="lang" id="lang" class="selectFilters">
+                                <option value="">Languange</option>
+                                <option value="en">English</option>
+                                <option value="hi">Hindi</option>
+                            </select>
+                            <select name="emotion" id="" class="selectFilters">
+                                <option value="">Emotion</option>
+                                <option value="success">Success</option>
+                                <option value="failure">Sailure</option>
+                            </select>
+                            <select name="author" id="" class="selectFilters">
+                                <option value="">Author</option>
+                                <option value="">Abdul Kalam</option>
+                                <option value="">Anonymous</option>
+                            </select>
+                            <select name="length" id="" class="selectFilters">
+                                <option value="">Length</option>
+                                <option value="">Short</option>
+                                <option value="">Medium</option>
+                                <option value="">Long</option>
+                            </select>
+                        </div>
                     </div>
+
                     <div id="nav-opt">
                         <div class="navBtn help">
                             <i class="fa-solid fa-question"></i>
@@ -76,8 +82,8 @@
                     </section>
 
                     <section class="controls-section">
-                        <div class="customization  border bg">
-                            <button id="colors-btn">
+                        <div class="customization">
+                            <button class="control-btn" id="colors-btn">
                                 <i class="icon fa-solid fa-palette"></i>
                                 <span>Color</span>
                                 <div class="options  border bg hidden">
@@ -89,7 +95,7 @@
                                     <div></div>
                                 </div>
                             </button>
-                            <button id="typefaces-btn">
+                            <button class="control-btn" id="typefaces-btn">
                                 <i class="icon fa-solid fa-font"></i>
                                 <span>Font</span>
                                 <div class="options border bg hidden">
@@ -98,7 +104,7 @@
                                     <div class="icon">A</div>
                                 </div>
                             </button>
-                            <button id="fontWeight-btn">
+                            <button class="control-btn" id="fontWeight-btn">
                                 <i class="icon fa-solid fa-scale-unbalanced"></i>
                                 <span>Weight</span>
                                 <div class="options  border bg hidden">
@@ -107,7 +113,7 @@
                                     <div class="icon">AAA</div>
                                 </div>
                             </button>
-                            <button id="sizes-btn">
+                            <button class="control-btn" id="sizes-btn">
                                 <i class="icon fa-regular fa-circle-dot"></i>
                                 <span>Size</span>
                                 <div class="options  border bg hidden">
@@ -119,16 +125,16 @@
                         </div>
 
 
-                        <div class="export-section  border bg">
-                            <button id="copy-btn">
+                        <div class="export-section">
+                            <button class="control-btn" id="copy-btn">
                                 <i class="icon fa-regular fa-copy"></i>
                                 <span>Copy</span>
                             </button>
-                            <button id="download-btn">
+                            <button class="control-btn" id="download-btn">
                                 <i class="icon fa-solid fa-download"></i>
                                 <span>Download</span>
                             </button>
-                            <button id="share-btn">
+                            <button class="control-btn" id="share-btn">
                                 <i class="icon fa-solid fa-share-from-square"></i>
                                 <span>Share</span>
                             </button>

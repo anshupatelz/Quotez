@@ -1,5 +1,5 @@
 /* Button - Start */
-button {
+.control-btn {
     padding: 10px;
     border: none;
     outline: none;
@@ -10,20 +10,38 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 15px;
-    /* background: var(--secondary-color); */
+    border-radius: 10px;
+    gap: 5px;
     background-color: transparent;
     color: var(--text-color);
-    font-size: calc(var(--font-size)*0.7);
+    font-size: calc(var(--font-size)*0.8);
 }
 
-button:hover {
+.control-btn:hover {
     background-color: var(--accent-color);
     color: var(--text-color);
+    background-color: var(--secondary-color);
 }
 
-button .icon {
-    font-size: calc(var(--font-size)*1.5);
+.control-btn .icon {
+    font-size: calc(var(--font-size)*1.4);
+}
+
+.export-section .control-btn {
+    width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+    .export-section .control-btn {
+        flex-direction: row;
+        gap: 10px;
+        font-size: calc(var(--font-size)*1.2);
+        width: 100%;
+    }
+
+    .export-section .control-btn .icon {
+        font-size: calc(var(--font-size)*1.2);
+    }
 }
 
 /* Button - Start */

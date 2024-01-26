@@ -8,11 +8,13 @@
     --text-color: rgb(178, 178, 178);
     --bg-image: url(/src/bg-dark-dots.svg);
     --font-size: 1rem;
-    --typeface: 'Space Grotesk', sans-serif;
+    /* --typeface: 'Space Grotesk', sans-serif; */
+    --typeface: 'poppin', sans-serif;
 }
 
 body.lightMode {
-    --background-color: linear-gradient(rgb(77, 52, 250, 0.05) 0%, #ffffff 80%);
+    /* --background-color: linear-gradient(rgb(77, 52, 250, 0.15) 0%, #ffffff 80%); */
+    --background-color: linear-gradient(#f0f0f0 0%, rgb(77, 52, 250, 0.10) 80%);
     --primary-color: rgb(235, 232, 255);
     --secondary-color: rgb(77, 52, 250, 0.2);
     --border-color: rgb(77, 52, 250, 0.3);

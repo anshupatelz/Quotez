@@ -11,6 +11,9 @@ header {
 }
 
 header>div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     font-size: calc(var(--font-size)*1.5);
 }
 

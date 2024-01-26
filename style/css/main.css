@@ -78,11 +78,13 @@ button {
   --text-color: rgb(178, 178, 178);
   --bg-image: url(/src/bg-dark-dots.svg);
   --font-size: 1rem;
-  --typeface: "Space Grotesk", sans-serif;
+  /* --typeface: 'Space Grotesk', sans-serif; */
+  --typeface: "poppin", sans-serif;
 }
 
 body.lightMode {
-  --background-color: linear-gradient(rgb(77, 52, 250, 0.05) 0%, #ffffff 80%);
+  /* --background-color: linear-gradient(rgb(77, 52, 250, 0.15) 0%, #ffffff 80%); */
+  --background-color: linear-gradient(#f0f0f0 0%, rgb(77, 52, 250, 0.10) 80%);
   --primary-color: rgb(235, 232, 255);
   --secondary-color: rgb(77, 52, 250, 0.2);
   --border-color: rgb(77, 52, 250, 0.3);
@@ -122,7 +124,7 @@ body {
 
 /* Container - Start */
 /* Button - Start */
-button {
+.control-btn {
   padding: 10px;
   border: none;
   outline: none;
@@ -133,22 +135,38 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 15px;
-  /* background: var(--secondary-color); */
+  border-radius: 10px;
+  gap: 5px;
   background-color: transparent;
   color: var(--text-color);
-  font-size: calc(var(--font-size) * 0.7);
+  font-size: calc(var(--font-size) * 0.8);
 }
 
-button:hover {
+.control-btn:hover {
   background-color: var(--accent-color);
   color: var(--text-color);
+  background-color: var(--secondary-color);
 }
 
-button .icon {
-  font-size: calc(var(--font-size) * 1.5);
+.control-btn .icon {
+  font-size: calc(var(--font-size) * 1.4);
 }
 
+.export-section .control-btn {
+  width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  .export-section .control-btn {
+    flex-direction: row;
+    gap: 10px;
+    font-size: calc(var(--font-size) * 1.2);
+    width: 100%;
+  }
+  .export-section .control-btn .icon {
+    font-size: calc(var(--font-size) * 1.2);
+  }
+}
 /* Button - Start */
 /* Header Styles - Start */
 header {
@@ -164,6 +182,9 @@ header {
 }
 
 header > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   font-size: calc(var(--font-size) * 1.5);
 }
 
@@ -197,6 +218,26 @@ header > div {
 }
 
 /* Header Styles - End */
+/* Secondary Nav - Start */
+#secondaryNav {
+  grid-column: span 12;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#new-quote-btn {
+  background-color: var(--primary-color);
+  font-size: calc(var(--font-size) * 1.4);
+  border: 2px solid var(--border-color);
+  color: var(--text-color);
+  padding: 7px 15px;
+  border-radius: 25px;
+}
+
+/* Secondary Nav - Start */
 /* Filters Styles - Start */
 #toggleFiltersOnMobile {
   display: none;
@@ -211,6 +252,15 @@ header > div {
   /* width: 200px; */
   /* text-align: center; */
   padding: 5px 10px;
+}
+
+#toggleFiltersOnMobile {
+  background-color: var(--primary-color);
+  font-size: var(--font-size);
+  border: 2px solid var(--border-color);
+  color: var(--text-color);
+  padding: 7px 15px;
+  border-radius: 25px;
 }
 
 @media screen and (max-width: 720px) {
@@ -238,13 +288,17 @@ main {
 }
 
 /* ----- Content Section Styles - Start */
+.content-section:default {
+  width: 500px;
+}
+
 .content-section {
   position: relative;
-  width: 100%;
+  max-width: 90%;
   min-width: 250px;
-  max-width: 500px;
-  height: 500px;
+  height: 400px;
   grid-column: span 12;
+  border-radius: 10px;
   padding: 25px;
   display: flex;
   flex-direction: row;
@@ -256,7 +310,9 @@ main {
 }
 
 .content {
-  background: var(--secondary-color);
+  background: hsla(0, 0%, 100%, 0.3);
+  box-shadow: hsla(240, 10%, 28%, 0.35) 0px 50px 100px -20px, hsla(0, 0%, 0%, 0.45) 0px 25px 50px -20px;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -292,8 +348,7 @@ main {
   position: absolute;
   bottom: 60px;
   margin: auto;
-  padding: 5px;
-  border-radius: 15px;
+  border-radius: 10px;
   height: -moz-fit-content;
   height: fit-content;
   min-height: 70px;
@@ -302,15 +357,10 @@ main {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-gap: 20px;
-  background-color: red;
+  background-color: var(--primary-color);
+  border: 2px solid var(--border-color);
 }
 
-@media screen and (max-width: 480px) {
-  .controls-section {
-    background-color: transparent;
-    grid-gap: 10px;
-  }
-}
 .customization {
   grid-column: span 7;
   display: flex;
@@ -320,23 +370,9 @@ main {
   gap: 10px;
 }
 
-@media screen and (max-width: 480px) {
-  .customization {
-    grid-column: span 12;
-  }
-}
 .customization > button {
   width: 100%;
   height: 100%;
-}
-
-#secondaryNav {
-  grid-column: span 12;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
 }
 
 .options {
@@ -344,7 +380,7 @@ main {
   transform: translateY(-100%);
   width: -moz-fit-content;
   width: fit-content;
-  max-width: 193px;
+  max-width: 160px;
   height: -moz-fit-content;
   height: fit-content;
   top: 0;
@@ -353,15 +389,20 @@ main {
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 10px;
-  border-radius: 15px;
-  padding: 10px;
+  gap: 5px;
+  border-radius: 10px;
+  padding: 7px;
+}
+
+#colors-btn .options {
+  left: 0;
 }
 
 .options div {
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+  border: 1.5px solid var(--border-color);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -379,15 +420,24 @@ main {
 }
 
 @media screen and (max-width: 480px) {
+  .controls-section {
+    border: none;
+    background-color: transparent;
+    grid-gap: 10px;
+  }
+  .customization,
   .export-section {
     grid-column: span 12;
+    margin: 0 10px;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    border: 2px solid var(--border-color);
+  }
+  #sizes-btn .options {
+    position: absolute;
+    right: 0;
   }
 }
-.export-section > button {
-  width: 100%;
-  height: 100%;
-}
-
 /* ----- Controls Section Styles - End */
 /* Main Styles - End */
 /* Footer Styles - Start */
