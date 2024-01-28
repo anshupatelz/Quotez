@@ -1,7 +1,7 @@
 const body = document.querySelector("body");
 const themeToggle = document.querySelector(".theme-toggle");
 const topicsBox = document.querySelector("#topicsBox");
-const qouteBox = document.querySelector("#qouteBox");
+const quoteBox = document.querySelector("#quoteBox");
 const authorBox = document.querySelector("#authorBox");
 const contentSection = document.querySelector('.content-section');
 const content = document.querySelector('.content');
@@ -18,11 +18,11 @@ const API_URL = "https://script.google.com/macros/s/AKfycbzPDiQRc2y-gJ7-iaYuMyu_
 // Quote Loader - Start
 function quoteLoader() {
     topicsBox.replaceChildren();
-    qouteBox.replaceChildren();
+    quoteBox.replaceChildren();
     authorBox.replaceChildren();
 
     topicsBox.classList.add("loadingElements");
-    qouteBox.classList.add("loadingElements");
+    quoteBox.classList.add("loadingElements");
     authorBox.classList.add("loadingElements");
 
     let loader = document.createElement("div");
@@ -32,7 +32,7 @@ function quoteLoader() {
 // Quote Loader - End
 
 
-// Random Qoute API Request - Start
+// Random Quote API Request - Start
 function getQuote(url) {
     fetch(url)
         .then((res) => {
@@ -40,7 +40,7 @@ function getQuote(url) {
         })
         .then((data) => {
             topicsBox.classList.remove("loadingElements");
-            qouteBox.classList.remove("loadingElements");
+            quoteBox.classList.remove("loadingElements");
             authorBox.classList.remove("loadingElements");
 
             const allTopics = data.randomQuote.topics;
@@ -51,37 +51,38 @@ function getQuote(url) {
                 topicsBox.appendChild(topicData);
             });
 
-            qouteBox.innerHTML = data.randomQuote.quote;
+            quoteBox.innerHTML = data.randomQuote.quote;
             authorBox.innerHTML = (`- ${data.randomQuote.author}`);
         })
         .catch((err) => {
-            qouteBox.innerHTML = "Somethings went worng!";
+            quoteBox.innerHTML = "Somethings went worng!";
         });
 };
 getQuote(API_URL);
-// Random Qoute API Request - End
-
-// New Quote - Start
-newQuoteBtn.addEventListener("click", () => {
-    quoteLoader();
-    getQuote(API_URL);
-});
-
-document.addEventListener("keypress", (event) => {
-    if (event.code === "Space") {
-        quoteLoader();
-        getQuote(API_URL);
-    }
-});
-// New Quote - End
+// Random Quote API Request - End
 
 // Filter Quotes - Start
-// let selectFilters = document.querySelectorAll("selectFilters");
+allEmotions = ["determined", "encouraging", "प्रेरणादायक", "inspired", "determined", "निर्धारित", "inspired", "insightful", "तर्कसंगत", "reflective", "विचारशील", "assertive", "proactive", "सुदृढ़", "सुदृढ़", "सक्रिय", "diligent", "कठिनाईपूर्ण", "hopeful", "आशावादी", "optimistic", "आशावादी", "hopeful", "जागरूक", "resilient", "प्रेरित", "courageous", "सहयोगी", "महत्वपूर्ण", "समर्थ", "सकारात्मक", "उत्साही", "प्रेरित", "संवेदनशील", "प्रेरित"];
+allAuthors = ["Albert Einstein", "Theodore Roosevelt", "थेयोडोर रूज़वेल्ट", "Steve Jobs", "Albert Einstein", "अल्बर्ट आइंस्टीन", "Steve Jobs", "Lao Tzu", "लाओ त्सु", "John Lennon", "जॉन लेनन", "Steve Jobs", "Peter Drucker", "स्टीव जॉब्स", "स्टीव जॉब्स", "पीटर ड्रकर", "Confucius", "कॉन्फ्यूशियस", "Franklin D. Roosevelt", "फ़्रैंकलिन डी. रूज़वेल्ट", "Eleanor Roosevelt", "एलिनोर रूज़वेल्ट", "Franklin D. Roosevelt", "डॉ. भीमराव आंबेडकर", "Winston Churchill", "मुकेश अंबानी", "Nelson Mandela", "ज़िया मोदी", "आब्दुल कलाम", "महात्मा गांधी", "अमिताभ बच्चन", "पीवी सिंधु", "अब्दुल कलाम", "सुनील भारील्वाल", "रतन टाटा"];
+
 let selectedLang = document.getElementById("lang");
 let selectedEmotion = document.getElementById("emotion");
 let selectedAuthor = document.getElementById("author");
 let selectedLength = document.getElementById("length");
 
+
+allEmotions.forEach((element, index) => {
+    let newEmotion = document.createElement("option");
+    newEmotion.innerText = element;
+    newEmotion.value = element;
+    selectedEmotion.appendChild(newEmotion);
+});
+allAuthors.forEach((element, index) => {
+    let newAuthor = document.createElement("option");
+    newAuthor.innerText = element;
+    newAuthor.value = element;
+    selectedAuthor.appendChild(newAuthor);
+});
 
 
 let lang = document.getElementById("lang").value;
@@ -99,6 +100,7 @@ selectedLang.addEventListener("change", () => {
     console.log(filteredApiUrl);
     getQuote(filteredApiUrl);
 });
+
 selectedEmotion.addEventListener("change", () => {
     quoteLoader();
     emotion = document.getElementById("emotion").value;
@@ -107,6 +109,7 @@ selectedEmotion.addEventListener("change", () => {
     console.log(filteredApiUrl);
     getQuote(filteredApiUrl);
 });
+
 selectedAuthor.addEventListener("change", () => {
     quoteLoader();
     author = document.getElementById("author").value;
@@ -115,6 +118,7 @@ selectedAuthor.addEventListener("change", () => {
     console.log(filteredApiUrl);
     getQuote(filteredApiUrl);
 });
+
 selectedLength.addEventListener("change", () => {
     quoteLoader();
     length = document.getElementById("length").value;
@@ -126,6 +130,19 @@ selectedLength.addEventListener("change", () => {
 
 // Filter Quotes - End
 
+// New Quote - Start
+newQuoteBtn.addEventListener("click", () => {
+    quoteLoader();
+    getQuote(filteredApiUrl);
+});
+
+document.addEventListener("keypress", (event) => {
+    if (event.code === "Space") {
+        quoteLoader();
+        getQuote(filteredApiUrl);
+    }
+});
+// New Quote - End
 
 // Theme Mode Switcher - Start
 themeToggle.addEventListener("click", () => {
@@ -156,7 +173,7 @@ const allColors = [
     "linear-gradient(90deg, hsla(29, 92%, 70%, 1) 0%, hsla(0, 87%, 73%, 1) 100%)",
     "linear-gradient(90deg, hsla(330, 36%, 53%, 1) 0%, hsla(289, 68%, 19%, 1) 100%)",
     "linear-gradient(90deg, hsla(192, 95%, 50%, 1) 0%, hsla(225, 89%, 47%, 1) 100%)",
-    "linear-gradient(90deg, hsla(139, 70%, 75%, 1) 0%, hsla(63, 90%, 76%, 1) 100%)",
+    "linear-gradient(90deg, hsla(185, 64%, 51%, 1) 0%, hsla(277, 74%, 24%, 1) 100%)",
     "linear-gradient(90deg, hsla(286, 48%, 91%, 1) 0%, hsla(340, 73%, 75%, 1) 50%, hsla(263, 58%, 45%, 1) 100%)"
 ];
 const colorOpt = document.querySelectorAll("#colors-btn .options div");
@@ -187,7 +204,7 @@ const typefacesOpt = document.querySelectorAll("#typefaces-btn .options div");
 typefacesOpt.forEach((element, index) => {
     element.style.fontFamily = allTypefaces[index];
     element.addEventListener("click", () => {
-        qouteBox.style.fontFamily = allTypefaces[index];
+        quoteBox.style.fontFamily = allTypefaces[index];
     });
 });
 
@@ -210,8 +227,8 @@ const sizessOpt = document.querySelectorAll("#sizes-btn .options div");
 sizessOpt.forEach((element, index) => {
     element.style.fontSize = allSizes[index];
     element.addEventListener("click", () => {
-        qouteBox.style.fontWeight = allFonts[index];
-        qouteBox.style.fontSize = allSizes[index];
+        quoteBox.style.fontWeight = allFonts[index];
+        quoteBox.style.fontSize = allSizes[index];
     });
 });
 
