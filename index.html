@@ -23,6 +23,10 @@
                 <header>
                     <div>
                         <div id="logo"><img src="/src/quotez_logo.png" alt=""></div>
+
+                    </div>
+
+                    <div id="nav-opt">
                         <button id="toggleFiltersOnMobile">
                             <i class="fa-solid fa-filter"></i>
                             <span>Filters</span>
@@ -33,52 +37,40 @@
                                 <option value="en">English</option>
                                 <option value="hi">Hindi</option>
                             </select>
-                            <select name="emotion" id="" class="selectFilters">
+                            <select name="emotion" id="emotion" class="selectFilters">
                                 <option value="">Emotion</option>
-                                <option value="success">Success</option>
-                                <option value="failure">Sailure</option>
+                                <option value="resilient">resilient</option>
+                                <option value="failure">Failure</option>
                             </select>
-                            <select name="author" id="" class="selectFilters">
+                            <select name="author" id="author" class="selectFilters">
                                 <option value="">Author</option>
                                 <option value="">Abdul Kalam</option>
                                 <option value="">Anonymous</option>
                             </select>
-                            <select name="length" id="" class="selectFilters">
+                            <select name="length" id="length" class="selectFilters">
                                 <option value="">Length</option>
                                 <option value="">Short</option>
                                 <option value="">Medium</option>
                                 <option value="">Long</option>
                             </select>
                         </div>
-                    </div>
-
-                    <div id="nav-opt">
-                        <div class="navBtn help">
-                            <i class="fa-solid fa-question"></i>
-                        </div>
                         <div class="navBtn theme-toggle">
-                            <input type="checkbox" class="checkbox" id="toggle">
-                            <label for="toggle">
-                                <i class="fa-regular fa-lightbulb"></i>
-                            </label>
+                            <i class="fa-regular fa-moon"></i>
                         </div>
                     </div>
                 </header>
 
-                <section id="secondaryNav">
-                    <button id="new-quote-btn">
-                        <i class="icon fa-solid fa-arrow-rotate-right"></i>
-                        <span>New Quote</span>
-                    </button>
-                </section>
-
                 <main>
-                    <section id="resizableContainer" class="content-section border bg">
+
+                    <section class="content-section">
                         <div class="content">
-                            <div id="topicsBox"></div>
-                            <div id="qoute">Loading Quote...</div>
-                            <div id="author"></div>
+                            <div id="topicsBox" class="loadingElements"></div>
+                            <div id="qouteBox" class="loadingElements"></div>
+                            <div id="authorBox" class="loadingElements"></div>
                         </div>
+                        <button id="new-quote-btn">
+                            <i class="icon fa-solid fa-arrow-rotate-right"></i>
+                        </button>
                     </section>
 
                     <section class="controls-section">
