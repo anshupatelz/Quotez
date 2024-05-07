@@ -55,6 +55,10 @@ function getQuote(url) {
             authorBox.innerHTML = (`- ${data.randomQuote.author}`);
         })
         .catch((err) => {
+            topicsBox.classList.remove("loadingElements");
+            quoteBox.classList.remove("loadingElements");
+            authorBox.classList.remove("loadingElements");
+
             quoteBox.innerHTML = "Somethings went worng!";
         });
 };
@@ -133,13 +137,13 @@ selectedLength.addEventListener("change", () => {
 // New Quote - Start
 newQuoteBtn.addEventListener("click", () => {
     quoteLoader();
-    getQuote(filteredApiUrl);
+    getQuote(API_URL);
 });
 
 document.addEventListener("keypress", (event) => {
     if (event.code === "Space") {
         quoteLoader();
-        getQuote(filteredApiUrl);
+        getQuote(API_URL);
     }
 });
 // New Quote - End
